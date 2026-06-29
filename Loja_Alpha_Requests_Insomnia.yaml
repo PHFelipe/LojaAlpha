@@ -1,0 +1,650 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Loja_Alpha
+meta:
+  id: wrk_5fa5cf2126f046659760ffd79b357a67
+  created: 1766270053732
+  modified: 1782652624897
+  description: ""
+collection:
+  - name: Categoria
+    meta:
+      id: fld_940e3e2222f74d55bafcd6b0a663f47d
+      created: 1782652684810
+      modified: 1782652684810
+      sortKey: -1782652684810
+      description: ""
+    children:
+      - url: localhost:8080/categorias
+        name: BuscarTodasCategorias
+        meta:
+          id: req_de0bcbbe52ff4458aea04a0a42c9cb81
+          created: 1766270060269
+          modified: 1782652687526
+          isPrivate: false
+          description: ""
+          sortKey: -1782652687487
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.2.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/categorias
+        name: CadastrarCategoria
+        meta:
+          id: req_c1dc3ad3d7214f80bf781ffe7121d24f
+          created: 1782652884504
+          modified: 1782653010445
+          isPrivate: false
+          description: ""
+          sortKey: -1782652884504
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Infantil 1 - 3 Anos"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/categorias/1
+        name: AtualizarCategoria
+        meta:
+          id: req_e3daabefdf0941f79fd0e5fb053d0dc6
+          created: 1782654220739
+          modified: 1782654353954
+          isPrivate: false
+          description: ""
+          sortKey: -1782654220739
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Eletronicos"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/categorias/buscar?nome=eletronicos
+        name: BuscarCategoriaPorNome
+        meta:
+          id: req_66d0b1080dbd4df68e8ccb38a9257e58
+          created: 1782694513277
+          modified: 1782694673765
+          isPrivate: false
+          description: ""
+          sortKey: -1782652785995.5
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/categorias/1
+        name: BuscarCategoriaPorID
+        meta:
+          id: req_e76cd58f751d4c3184242e6eb1dd499a
+          created: 1782694684610
+          modified: 1782694721048
+          isPrivate: false
+          description: ""
+          sortKey: -1782652835249.75
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Produto
+    meta:
+      id: fld_1c8df290787e44fe8b57e6cb3d06aa02
+      created: 1782652695772
+      modified: 1782652695772
+      sortKey: -1782652695772
+      description: ""
+    children:
+      - url: localhost:8080/produtos
+        name: BuscarTodosProdutos
+        meta:
+          id: req_9a69b16af9424208846ba071f27a6d09
+          created: 1782652699496
+          modified: 1782652732841
+          isPrivate: false
+          description: ""
+          sortKey: -1782652699496
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/produtos
+        name: CadastrarProduto
+        meta:
+          id: req_23e2265742a541e9bfdb1a28061f776c
+          created: 1782653532389
+          modified: 1782655398261
+          isPrivate: false
+          description: ""
+          sortKey: -1782653532389
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "nome": "Triângulo de Atividades",
+              "descricao": " Possui elementos giratórios, diferentes texturas, chocalho e espelhinho para a autodescoberta.",
+              "validade": "2030-08-25",
+              "idCategoria": 2,
+            	"status":"ATIVO",
+              "idsFornecedores": [2]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/produtos/1
+        name: AtualizarProduto
+        meta:
+          id: req_204a4d4c529b4cd58e09ae122b518ae3
+          created: 1782653773399
+          modified: 1782655312031
+          isPrivate: false
+          description: ""
+          sortKey: -1782653773399
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nome": "Teclado Mecânico Red Switch",
+              "descricao": "Teclado mecânico com iluminação RGB",
+              "validade": "2028-06-15",
+              "idCategoria": 1,
+            	"status": "ATIVO",
+              "idsFornecedores": [1]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/produtos/1
+        name: BuscarProdutoPorID
+        meta:
+          id: req_9085aa2f2e8f40f8b5f20dddb7f370d6
+          created: 1782655101752
+          modified: 1782655238397
+          isPrivate: false
+          description: ""
+          sortKey: -1782652699296
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/produtos/categoria/2
+        name: BuscarProdutoPorCategoria
+        meta:
+          id: req_fcc85c6276ec4575a527102e6cb60ac4
+          created: 1782655190347
+          modified: 1782655417288
+          isPrivate: false
+          description: ""
+          sortKey: -1782652699396
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/produtos/1
+        name: DeletarProduto
+        meta:
+          id: req_3f3d3d736a504b8f8f063bad1ab70f54
+          created: 1782655900845
+          modified: 1782655928444
+          isPrivate: false
+          description: ""
+          sortKey: -1782655900845
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Fornecedor
+    meta:
+      id: fld_b345d1dcba404fba93d63954403284b0
+      created: 1782652760380
+      modified: 1782656090012
+      sortKey: -1782652760380
+      description: ""
+    children:
+      - url: localhost:8080/fornecedores
+        name: BuscarTodosFornecedores
+        meta:
+          id: req_71ca291b18e74c918fab93495f4fac40
+          created: 1782652762804
+          modified: 1782653117487
+          isPrivate: false
+          description: ""
+          sortKey: -1782652762804
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/fornecedores
+        name: CadastrarFornecedor
+        meta:
+          id: req_34665a4ba5474c4bb4602e4aace06981
+          created: 1782652989177
+          modified: 1782653201322
+          isPrivate: false
+          description: ""
+          sortKey: -1782652989177
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nomeFantasia": "Buba",
+            	"endereco": "Rua Indios Cariris, 78, Campina Grande",
+            	"cnpj": "987654321"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/fornecedores/1
+        name: AtualizarFornecedor
+        meta:
+          id: req_8046df0b5f374ffca0c0f40b9151a77c
+          created: 1782654584276
+          modified: 1782693178451
+          isPrivate: false
+          description: ""
+          sortKey: -1782654584276
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            		"id": 1,
+            		"nomeFantasia": "Casas Bahia",
+            		"endereco": "Rua Joao Pessoa, 510, Campina Grande",
+            		"cnpj": "123456789"
+            	}
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/fornecedores/2
+        name: ExcluirFornecedor
+        meta:
+          id: req_0e4bce4cb1154d19986fa41058627121
+          created: 1782654746614
+          modified: 1782654835475
+          isPrivate: false
+          description: ""
+          sortKey: -1782654746614
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/fornecedores/1
+        name: BuscarFornecedorPorID
+        meta:
+          id: req_d299fcd6ae874a67a822433ca3916e62
+          created: 1782656130616
+          modified: 1782656182838
+          isPrivate: false
+          description: ""
+          sortKey: -1782652762704
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Venda
+    meta:
+      id: fld_21b5350e2ef1459180e66db62b91299d
+      created: 1782652817254
+      modified: 1782652817254
+      sortKey: -1782652817254
+      description: ""
+    children:
+      - url: localhost:8080/vendas
+        name: BuscarTodasVendas
+        meta:
+          id: req_88c3cd81ea3345faa8575cd0e223296a
+          created: 1782652820238
+          modified: 1782691952419
+          isPrivate: false
+          description: ""
+          sortKey: -1782652820238
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/vendas
+        name: CadastrarVenda
+        meta:
+          id: req_6bbf545aeb974ba988deeb2c622e6af3
+          created: 1782653258405
+          modified: 1782691582609
+          isPrivate: false
+          description: ""
+          sortKey: -1782653258405
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "dataVenda": "2026-06-28T15:30:00.000+00:00",
+              "itens": [
+                {
+                  "quantidade": 2,
+                  "valorUnitario": 150.00,
+                  "idProduto": 1
+                },
+                {
+                  "quantidade": 1,
+                  "valorUnitario": 300.00,
+                  "idProduto": 2
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/vendas/3
+        name: BuscarVendaPorID
+        meta:
+          id: req_b9c7cfb6dea8416bb65b219632d38241
+          created: 1782656480178
+          modified: 1782691798262
+          isPrivate: false
+          description: ""
+          sortKey: -1782653039321.5
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/vendas/1
+        name: DeletarVenda
+        meta:
+          id: req_649abeb6a664424ca9afb1fe623b1385
+          created: 1782691856145
+          modified: 1782692339910
+          isPrivate: false
+          description: ""
+          sortKey: -1782691856145
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/vendas/5
+        name: AtualizarVenda
+        meta:
+          id: req_a5a16a391c774dcd97fc8ec8cf7b32e9
+          created: 1782693305092
+          modified: 1782693468034
+          isPrivate: false
+          description: ""
+          sortKey: -1782672557275
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "dataVenda": "2026-06-28T15:31:00.000+00:00",
+              "itens": [
+                {
+                  "quantidade": 2,
+                  "valorUnitario": 150.00,
+                  "idProduto": 1
+                },
+                {
+                  "quantidade": 1,
+                  "valorUnitario": 300.00,
+                  "idProduto": 2
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: ItemVenda
+    meta:
+      id: fld_60610368dfd745b1afbbc4c47b88d412
+      created: 1782656731896
+      modified: 1782656731896
+      sortKey: -1782656731896
+      description: ""
+    children:
+      - url: localhost:8080/itens-venda/venda/3
+        name: BuscarProdutosVenda
+        meta:
+          id: req_cc3bdf63b093443882569ebf32b9c976
+          created: 1782656769472
+          modified: 1782692518550
+          isPrivate: false
+          description: ""
+          sortKey: -1782656769472
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/itens-venda/
+        name: RemoverItemVenda
+        meta:
+          id: req_570f3607df294678a0f76a38b8f63112
+          created: 1782692634212
+          modified: 1782692985830
+          isPrivate: false
+          description: ""
+          sortKey: -1782692634212
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Nota Fiscal
+    meta:
+      id: fld_d3c30f63ea3b44b186ec16de833acca3
+      created: 1782691837186
+      modified: 1782691837186
+      sortKey: -1782691837186
+      description: ""
+    children:
+      - url: localhost:8080/notas-fiscais/4
+        name: BuscarNotaFiscal
+        meta:
+          id: req_10e92288f7704a288ccfd4518734655a
+          created: 1782691840569
+          modified: 1782693093112
+          isPrivate: false
+          description: ""
+          sortKey: -1782691840569
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/notas-fiscais/4
+        name: AtualizarNotaFiscal
+        meta:
+          id: req_0547ce3b03074d1ab6f987dde0a04d66
+          created: 1782693041600
+          modified: 1782693220607
+          isPrivate: false
+          description: ""
+          sortKey: -1782693041600
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"numero": "0b5864b8",
+            	"dataEmissao": "2026-06-28",
+            	"valorTotal": 600.00,
+            	"chaveAcesso": "5d677d7b",
+            	"status": "EMITIDA",
+            	"idVenda": 5
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_48c4b389279fa74d624d6707c1629b05ff46e09d
+    created: 1766270053778
+    modified: 1766270053778
+environments:
+  name: Base Environment
+  meta:
+    id: env_48c4b389279fa74d624d6707c1629b05ff46e09d
+    created: 1766270053770
+    modified: 1766270053770
+    isPrivate: false
